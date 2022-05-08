@@ -14,11 +14,17 @@ p {
 }
 
 button {
-  @apply bg-gray-100;
-  @apply hover:bg-gray-200;
-  @apply border-gray-500;
-  @apply border;
   @apply px-2;
   @apply py-0.5;
   @apply rounded;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+}
+body {
+  margin: 0;
 }

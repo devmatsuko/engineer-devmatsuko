@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import "vue3-carousel/dist/carousel.css";
-import { Carousel, Navigation, Slide } from "vue3-carousel";
+import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 
 type Image = {
   id: number,
@@ -16,17 +16,12 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="container mx-auto">
-    <Carousel>
+  <div class="container">
+    <Carousel autoplay=5000 wrapAround=true>
       <template #slides>
         <Slide v-for="(image, index) in images" :key="image.id">
-          <img class="rounded-full w-96 h-96 object-cover user-drag-none" :src="image.src" />
+          <img class="rounded-full w-80 h-80 object-cover user-drag-none"  :src="image.src" />
         </Slide>
-      </template>
-
-      <template #addons>
-        <Navigation />
-        <Pagination />
       </template>
     </Carousel>
   </div>
